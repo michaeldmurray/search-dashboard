@@ -1,0 +1,27 @@
+<div class="container vertical">
+  <div class="item">
+      <a [routerLink]="['/search-history']">Search History</a>
+  </div>
+  <div class="item">
+      <input type="text"
+      placeholder="search query"
+      [(ngModel)]="searchText"/>
+  </div>
+  <div class="item">
+    <button (click)="onSearch()">Search</button>
+  </div>
+</div>
+<div name="results" class="container">
+  <div class="item">
+    <h5>Wiki Results</h5>
+    <div *ngFor="let result of wikiResults | async">
+      <p>{{ result.title }}</p>
+    </div>
+  </div>
+  <div class="item">
+    <h5>Giphy Results</h5>
+    <div *ngIf="giphyResults | async as result">
+      <img src="{{ result.image_url }}">
+    </div>
+  </div>
+</div>

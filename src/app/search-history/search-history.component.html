@@ -1,0 +1,15 @@
+<div class="container vertical">
+  <div class="item">
+    <a [routerLink]="['/']">Back to Search</a>
+  </div>
+  <div class="item">
+    <button (click)="onClearClick()">Clear History</button>
+  </div>
+</div>
+<div class="container vertical">
+  <h5 class="item">Search History</h5>
+  <p *ngFor="let query of queries | async" class="item">
+    {{ query }}
+  </p>
+</div>
+

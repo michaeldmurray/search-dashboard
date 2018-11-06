@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+    display: flex;
+    padding: 10px;
+    align-items: flex-start;
+}
+
+.container.vertical {
+    flex-direction: column;
+}
+
+.item {
+    flex: 1 1 auto;
+    margin: 5px;
+}
